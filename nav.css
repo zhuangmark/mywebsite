@@ -1,0 +1,88 @@
+body{
+    margin:0px;    /* body邊線預設還有8px 設定成0px 把網頁邊線空白去掉 */
+    font-size:20px;  /* 讓網頁有個基底字型大小 再個別調整 */
+    font-family:arial,sans-serif; /* 網頁字型一致 */
+}
+nav{
+    height:1000px;
+    background-image:url(20.jpg);
+    background-size:cover; 
+    background-attachment:fixed;
+}
+nav>.title{
+    text-align:center; font-size:3em; /*放大兩倍2em=200% */
+    padding:40px;margin-bottom:80px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Satisfy', cursive;
+    color:white
+}
+nav>.menu{
+    display:flex; justify-content:center; /*水平並排, 段落置中*/
+    margin-bottom:250px
+}
+nav>.menu>.item{
+    font-size:0.9em;margin:0px 40px; /* 邊界 1.上下 2.左右 */
+    color:#222222;/* 條顏色 深灰 */
+    text-shadow:0px 0px 5px#ffffff; /* 文字陰影(深色)和(淺色)光影 */
+    cursor:pointer;
+    transition:transform 0.5s;
+}
+nav>.menu>.item:hover{
+    color:#000000; transform:scale(1.1)
+}
+nav>.mobile-menu{
+    position:fixed;left:0px;top:0px;
+    width:100%;height:100%;
+    background-color:rgba(255, 255, 255, 0.9); /* 一點透明白色 */
+    text-align:center;
+    display:none;
+}
+nav>.mobile-menu>.item{
+    padding-top:30px;font-size:0.8em;
+    color:#222222;
+    cursor:pointer;
+}
+nav>.mobile-menu>.close{
+    position:absolute;right:10px;top:10px;
+    cursor:pointer;
+
+}
+nav>.mobile-menu-trigger{   
+    display:none;justify-content:center;
+    margin-bottom:100px;
+}
+nav>.memo{
+    text-align:center; 
+    font-size:60px; color:#ffffff;
+    line-height:1.25em;  /* 行高 */
+    letter-spacing:4px /* 文字間距 */
+}
+
+nav>.mobile-menu-trigger>.lines{
+    width:40px;
+    cursor:pointer;
+}
+nav>.mobile-menu-trigger>.lines>.line{
+    height:2px;
+    background-color:#000000;
+    margin:8px 0px;
+} 
+/* 螢幕尺寸小於800px 套用以下設定 */
+@media (max-width:800px){
+    nav{
+        height:600px;background-position:20% center;
+    }
+    nav>.title{
+        padding:25px 0px;margin-bottom:40px;
+    }
+    nav>.menu{
+        display:none;
+    }
+    nav>.mobile-menu-trigger{
+        display:flex;
+    }
+    nav>.memo{
+        font-size:2em;        
+    }
+    
+}
